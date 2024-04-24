@@ -3,6 +3,15 @@
 Countdown timer with Tabs
 (Contador regressivo com abas)
 
+* Não se esqueça de instalar os ultimos drivers gráficos de sua placa de vídeo, e de ![instalar o Lua no Windows](https://terminalroot.com.br/2022/07/lua-windows.html)
+
+![300x256](https://raw.githubusercontent.com/andryeltj/limit/main/shots/tabsColor.png)
+
+| Tela de Inicio | Rodando o tempo de uma aba oculta |
+| ------------- | -------------:|
+| ![300x256](https://raw.githubusercontent.com/andryeltj/limit/main/shots/running.png) | ![300x256](https://raw.githubusercontent.com/andryeltj/limit/main/shots/runInBackground.png) |
+
+
 ## Como usar:
  ** Use o teclado físico e o mouse pra operar. **
  - **Space**		-	Inicia a contagem
@@ -14,3 +23,6 @@ Countdown timer with Tabs
 Desenvolvido usando a linguagem ![Lua](https://www.lua.org/docs.html) e o motor ![Love2d](https://love2d.org/).
 
 Obrigado.
+
+
+ [![Gostou? Contribua](https://raw.githubusercontent.com/andryeltj/NumPop/main/res/PIX-NumPop.png)](https://abre.ai/numpop-qr)
