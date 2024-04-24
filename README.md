@@ -22,6 +22,7 @@ Countdown timer with Tabs
 
 Desenvolvido usando a linguagem ![Lua](https://www.lua.org/docs.html) e o motor ![Love2d](https://love2d.org/).
 
+Espero que gostem da ferramenta.
 Obrigado.
 
 
