@@ -18,10 +18,11 @@ function love.load()
  gf("NotoSans-Light.ttf")
  gf("mui-symbols.ttf")
  gf("NotoSerifJP-Light.otf")
- bgm = love.audio.newSource("res/audio/bell.mp3", "stream")
+ bgm = love.audio.newSource(audiobell, "stream")
  image = lg.newImage ('res/bitmap3.png')
  fontdings=lg.setNewFont(datafont[2], mainfontsize+3)
  fontsystem=lg.setNewFont(datafont[1], mainfontsize)
+ fontstarts=lg.setNewFont(datafont[2], mainfontsize-3)
  fonttab=lg.setNewFont(datafont[3], mainfontsize)
  dings={"","•","￮","","","","","","*"}
  exec=""
@@ -49,6 +50,7 @@ function love.load()
  canva=1
  bks=1
  quartcircle = math.pi / 1-div
+ initialtime=""
 end
 function love.update(dt)
  td=td+dt
@@ -77,6 +79,7 @@ function love.update(dt)
  sw,sh = imageResize(image, 180, 200 )
  wa,ha = imgow*sw,imgoh*sh
  readtab()
+ countinitialt()
 end
 function love.draw( )
   --print(aba,tbTimers[aba],dividing[aba],tbControl[aba])
@@ -148,6 +151,7 @@ function love.draw( )
   sout=(function() sdbthv=0 end)
   mousevent(165,0,32,32,soin) --,sout)
   lg.setColor(1,1,1);lg.printf(sdact,0,5,190,"right")
+  lg.setColor(starttime[bks]);lg.setFont(fontstarts);lg.printf(initialtime,0,38,133,"center")
 end
 
 function newtab()
@@ -156,12 +160,14 @@ function newtab()
   if bks > #backgrounds then bks=1 end
   readtab()
   countdodisplay()
+  countinitialt()
 end
 function navplus()
   if #tbTimers >= 1 then
   aba=aba+1; if aba > #tbTimers then aba = #tbTimers end
   readtab()
   countdodisplay()
+  countinitialt()
   end
 end
 function navminus()
@@ -171,6 +177,7 @@ function navminus()
   aba=aba-1; if aba <= 0 then aba = 1 end
   readtab()
   countdodisplay()
+  countinitialt()
   end
 end
 function readtab()
@@ -211,6 +218,19 @@ function countdodisplay()
     Display=Display..v
   end
 end
+function countinitialt()
+  tbDisplayTimeS={0,0,0}
+  tbDisplayTimeS[1] = math.floor(tbStarts[aba] / 3600)
+  tbDisplayTimeS[2] = (math.floor(tbStarts[aba] / 60)%60)
+  tbDisplayTimeS[3] = math.floor(tbStarts[aba] % 60)
+  --print(tbTimers[aba],tbDisplayTime[1],tbDisplayTime[2],tbDisplayTime[3])
+  if tbStarts[aba] < 3599 then
+    if tbStarts[aba] == 0 then initialtime = "" else
+    initialtime = string.format("%02d%02d",tbDisplayTimeS[2],tbDisplayTimeS[3]) end
+  else
+  initialtime = string.format("%02d%02d%02d",tbDisplayTimeS[1],tbDisplayTimeS[2],tbDisplayTimeS[3])
+  end
+end
 function love.keypressed(key)
   if key == "space" then
     showexec = 1;
@@ -221,6 +241,9 @@ function love.keypressed(key)
   if love.keyboard.isDown('lctrl') and key == 'right' or love.keyboard.isDown('rctrl') and key == 'right' or
      love.keyboard.isDown('lctrl') and key == 't' or love.keyboard.isDown('rctrl') and key == 't'
   then	newtab()  end
+  if love.keyboard.isDown('lctrl') and key == 'right' or love.keyboard.isDown('rctrl') and key == 'right' or
+     love.keyboard.isDown('lctrl') and key == 's' or love.keyboard.isDown('rctrl') and key == 's'
+  then	if sound == 1 then sound = 0 else sound = 1 end end
   if love.keyboard.isDown('lctrl') and key == 'x' or love.keyboard.isDown('rctrl') and key == 'x'
   then
    if #tbTimers > 1 then

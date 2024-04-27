@@ -11,6 +11,9 @@ azure={0,0.568627451,0.917647059}
 marro={0.243137255,0.152941176,0.137254902}
 
 backgrounds=	{magen,verme,verde,laran,preto,cinza,azure,marro,branc,preto}
-progressbar=	{verde,laran,laran,branc,verm2,magen,cinza,laran,cinza,magen}
-timers	=	{ciano,verde,branc,verde,branc,verm2,verde,azure,verme,ciano}
-controls=	{branc,ciano,ciano,verme,ciano,branc,laran,verde,azure,verm2}
+progressbar=	{verde,laran,laran,branc,verm2,magen,verde,laran,cinza,magen}
+timers	=	{ciano,verde,branc,verde,branc,verm2,laran,azure,verme,ciano}
+controls=	{branc,ciano,ciano,verme,ciano,branc,verm2,verde,azure,verm2}
+starttime =	{cinza,cinza,verme,branc,cinza,magen,branc,cinza,cinza,cinza}
+
+audiobell="res/audio/bell.mp3"
